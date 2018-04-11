@@ -3,4 +3,4 @@
 
 
 Screenshot:
-![shot1](./Screenshot/1.png)
+![shot1](./screenshot/1.png)
