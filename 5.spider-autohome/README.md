@@ -1,5 +1,5 @@
 # spider on autohome(汽车之家)
-> 1. My first Web spider based on module requests and BeautifulSoup
+> 1. My first Web spider based on module requests（发送网络请求） and BeautifulSoup（文档解析器）
 > 2. 爬取新闻指定某个区域，获取标题，简介，文章链接，缩略图
 
 # 缺点：
