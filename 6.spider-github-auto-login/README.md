@@ -1,12 +1,12 @@
-# 模拟github自动登录
-> 1. based on module requests（发送网络请求） and BeautifulSoup（文档解析器）
-
+# 模拟浏览器登录github流程
+> 1. based on module requests（发送网络请求，例如post请求，获取cookies等） and BeautifulSoup（文档解析器，获取token）
+> 2. 获取所需信息，例如token，cookies，登录表单提交的数据，然后通过post请求模拟登录
 
 Screenshot:
 ### 1. 获取token，原因：
-> https://www.cnblogs.com/allen2333/p/9125239.html
-> 注意： 模拟浏览器登录github并不是进行CSRF攻击，只是需要带上所需的信息。例如token。
-> 另外：token是一种身份认证方式，可以防止CSRF攻击和防止表单重复提交等；https://www.cnblogs.com/allen2333/p/9124608.html
+> 1. https://www.cnblogs.com/allen2333/p/9125239.html。
+> 2. 注意： 模拟浏览器登录github并不是进行CSRF攻击，只是需要带上所需的信息。例如token。
+> 3. 另外：token是一种身份认证方式，可以防止CSRF攻击和防止表单重复提交等； https://www.cnblogs.com/allen2333/p/9124608.html
 
 ![shot1](./screenshot/1.png)
 ---
