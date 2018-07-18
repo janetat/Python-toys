@@ -28,7 +28,7 @@ divs = doc('div.explore-feed.feed-item').items()
 
 index = 1
 
-# div是pyquery.pyquery.PyQuery对象, 所以div可以用PyQuery的API操作节点
+# item是pyquery.pyquery.PyQuery对象, 所以item可以用PyQuery的API操作节点
 for div in divs:
     question_node = div.find('a.question_link')
     question_text = question_node.text()

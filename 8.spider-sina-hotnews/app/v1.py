@@ -59,7 +59,7 @@ for index in range(1, len(data_list)):
     # 将所要的信息放在当前worksheet的最低行
     ws.append((index, title, media, click_num, time, url))
 
-# 保存excel
+# 保存到excel文件中
 wb.save('sample.xlsx')
 
 
