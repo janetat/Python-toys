@@ -1,0 +1,2 @@
+# celery multi queues template
+
