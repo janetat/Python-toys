@@ -1,6 +1,14 @@
 """
-    1. 无节制的创建和销毁线程是一种极大的浪费。
-    2. 线程池控制了工作的线程数量，也避免了创建和销毁线程的巨大开销。重复利用执行完的线程。
-    3. concurrent.futures 模块，这个模块包含了线程池和进程池、管理并行编程任务、处理非确定性的执行流程、进程/线程同步等功能。
+    1. multiprocessing.pool.ThreadPool
+    2. 最好不要用。The multiprocessing.pool.ThreadPool is not documented as its implementation has never been completed. It lacks tests and documentation.
+    3. https://stackoverflow.com/questions/46045956/whats-the-difference-between-threadpool-vs-pool-in-python-multiprocessing-modul
 """
 
+from threading import currentThread
+from multiprocessing.pool import ThreadPool
+pool = ThreadPool(4)
+
+def foo(n):
+    print(currentThread().name, n ** 2)
+
+pool.map(foo, range(11111)) 

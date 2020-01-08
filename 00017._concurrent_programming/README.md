@@ -14,4 +14,5 @@
     - [多线程同步原语_事件Eevent](./multithreading/synchronization_primitives/event.py)
     - [多线程同步原语_队列Queue](./multithreading/synchronization_primitives/queue.py)
     
-   - [线程池_v1](./multithreading/thread_pool/v1.py)
+   - [线程池]
+     - [multiprocessing.pool.ThreadPool](./multithreading/thread_pool/v1.py)
