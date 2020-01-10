@@ -1,11 +1,11 @@
 """
-    1. multiprocessing.dummy replicates the API of multiprocess ing but is no more than a wrapper around the threading module.
-    2. 也就是说，multiprocessing.dummy是线程池
-    3. dummy里面写了：from ..pool import ThreadPool。所以和v1.py一样
-    4. dummy有人体模型的意思，模仿的意思。
+    1. 线程池
+    2. from multiprocessing.pool import Pool
+    3. 强调：任务的执行周期决定于 CPU 核数、任务分配算法、操作系统的时间片分配算法（调度算法）
 """
+
 import time
-from multiprocessing.dummy import Pool
+from multiprocessing.pool import Pool
 
 
 def time_cost(func):
