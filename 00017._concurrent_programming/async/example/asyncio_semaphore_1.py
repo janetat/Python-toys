@@ -7,6 +7,7 @@ import aiohttp
 import asyncio
 from pprint import pprint
 
+
 NUMBERS = range(11)
 URL = 'http://httpbin.org/get?a={}'
 SEMAPHORE = 3
@@ -30,5 +31,6 @@ async def main():
     await asyncio.gather(
         *[print_result(num) for num in NUMBERS]
     )
+
 
 asyncio.run(main())
