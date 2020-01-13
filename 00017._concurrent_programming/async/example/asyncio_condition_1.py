@@ -2,8 +2,6 @@
     1. 本示例是消费者/生产者模型。
     2. 5个消费者，每个消费者观察(wait)condition。当等到condition通知了(notify)，才可以继续切换换消费者协程执行。 
     3. 先通知一个消费者，然后通知两个消费者，然后通知所有其余的消费者。
-    4. 去掉event_loop参数。
-    5. asyncio.run() New in version 3.7.
 """
 
 import asyncio
@@ -36,7 +34,7 @@ async def producer(condition):
     print('ending producing')
 
 
-async def main():
+async def main(loop):
     condition = asyncio.Condition()
 
     # 设置任务以观察condition
@@ -49,7 +47,7 @@ async def main():
     # asyncio.ensure_future(producer(condition))  
     # create_task has been added in Python 3.7. Prior to Python 3.7, 
     # the low-level asyncio.ensure_future() function can be used instead:
-    asyncio.create_task(producer(condition))
+    loop.create_task(producer(condition))
     # await asyncio.wait([producer(condition)]) # 错误的写法。在consumer在事件循环调度之前，producer已经执行完了，然后consumers一直阻塞。
 
     # 等consumers完成
@@ -58,4 +56,8 @@ async def main():
 
 
 
-asyncio.run(main()) # asyncio.run() New in version 3.7.
+event_loop = asyncio.get_event_loop()
+try:
+    result = event_loop.run_until_complete(main(event_loop))
+finally:
+    event_loop.close()
