@@ -21,7 +21,7 @@ async def consumer(num, q):
         else:
             wt = 0.1 * item  # assumed working time
             print('consuer {}: consumed item {} for {}s'.format(num, item, wt))
-            await asyncio.sleep(wt)
+            await asyncio.sleep(wt) # 切换到其他协程。
             q.task_done()
 
     print('consumer {}: ending'.format(num))
