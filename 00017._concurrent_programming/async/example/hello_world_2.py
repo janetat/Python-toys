@@ -1,5 +1,6 @@
 """
     1. 研究如何写才能真正实现协程并发。（如何正确使用asyncio）
+    2. Based on python 3.7.4. 
 """
 
 import asyncio
